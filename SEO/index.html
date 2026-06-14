@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RankPilot AI - SEO Content Intelligence Platform</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <svg class="icon-sprite" aria-hidden="true">
+      <symbol id="icon-search" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="7"></circle>
+        <path d="m20 20-4.6-4.6"></path>
+      </symbol>
+      <symbol id="icon-spark" viewBox="0 0 24 24">
+        <path d="M12 2l1.7 6.1L20 10l-6.3 1.9L12 18l-1.7-6.1L4 10l6.3-1.9L12 2z"></path>
+        <path d="M19 15l.7 2.3L22 18l-2.3.7L19 21l-.7-2.3L16 18l2.3-.7L19 15z"></path>
+      </symbol>
+      <symbol id="icon-cluster" viewBox="0 0 24 24">
+        <circle cx="7" cy="8" r="3"></circle>
+        <circle cx="17" cy="8" r="3"></circle>
+        <circle cx="12" cy="17" r="3"></circle>
+        <path d="M9.7 10.3 11 14"></path>
+        <path d="M14.3 10.3 13 14"></path>
+        <path d="M10 8h4"></path>
+      </symbol>
+      <symbol id="icon-brief" viewBox="0 0 24 24">
+        <path d="M7 3h7l4 4v14H7z"></path>
+        <path d="M14 3v5h5"></path>
+        <path d="M10 12h6"></path>
+        <path d="M10 16h6"></path>
+      </symbol>
+      <symbol id="icon-calendar" viewBox="0 0 24 24">
+        <path d="M5 5h14v15H5z"></path>
+        <path d="M8 3v4"></path>
+        <path d="M16 3v4"></path>
+        <path d="M5 10h14"></path>
+      </symbol>
+      <symbol id="icon-download" viewBox="0 0 24 24">
+        <path d="M12 3v12"></path>
+        <path d="m7 10 5 5 5-5"></path>
+        <path d="M5 20h14"></path>
+      </symbol>
+      <symbol id="icon-copy" viewBox="0 0 24 24">
+        <path d="M8 8h11v13H8z"></path>
+        <path d="M5 16H4V3h11v1"></path>
+      </symbol>
+      <symbol id="icon-plus" viewBox="0 0 24 24">
+        <path d="M12 5v14"></path>
+        <path d="M5 12h14"></path>
+      </symbol>
+      <symbol id="icon-filter" viewBox="0 0 24 24">
+        <path d="M4 5h16"></path>
+        <path d="M7 12h10"></path>
+        <path d="M10 19h4"></path>
+      </symbol>
+      <symbol id="icon-reset" viewBox="0 0 24 24">
+        <path d="M4 12a8 8 0 1 0 2.3-5.7"></path>
+        <path d="M4 4v6h6"></path>
+      </symbol>
+    </svg>
+
+    <main class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div>
+            <p class="eyebrow">SEO Content Intelligence</p>
+            <h1>RankPilot AI</h1>
+          </div>
+        </div>
+
+        <form class="control-panel" id="analysisForm">
+          <label>
+            <span>Seed Keyword</span>
+            <input id="seedKeyword" type="text" value="online MBA programs" maxlength="60" />
+          </label>
+
+          <label>
+            <span>Education Segment</span>
+            <select id="segment">
+              <option value="higher-ed">Higher education</option>
+              <option value="test-prep">Test preparation</option>
+              <option value="professional">Professional courses</option>
+              <option value="k12">K-12 learning</option>
+            </select>
+          </label>
+
+          <div class="field-grid">
+            <label>
+              <span>Market</span>
+              <select id="market">
+                <option value="us">United States</option>
+                <option value="india">India</option>
+                <option value="uk">United Kingdom</option>
+                <option value="global">Global</option>
+              </select>
+            </label>
+            <label>
+              <span>Goal</span>
+              <select id="goal">
+                <option value="lead">Lead generation</option>
+                <option value="traffic">Organic traffic</option>
+                <option value="authority">Topical authority</option>
+              </select>
+            </label>
+          </div>
+
+          <fieldset>
+            <legend>Intent Focus</legend>
+            <div class="segmented-control" role="radiogroup" aria-label="Intent focus">
+              <label>
+                <input type="radio" name="intentFocus" value="balanced" checked />
+                <span>Balanced</span>
+              </label>
+              <label>
+                <input type="radio" name="intentFocus" value="conversion" />
+                <span>Conversion</span>
+              </label>
+              <label>
+                <input type="radio" name="intentFocus" value="authority" />
+                <span>Authority</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="button-row">
+            <button class="button primary" type="submit">
+              <svg><use href="#icon-search"></use></svg>
+              Analyze
+            </button>
+            <button class="button ghost icon-button" type="button" id="resetBtn" aria-label="Reset demo data" title="Reset demo data">
+              <svg><use href="#icon-reset"></use></svg>
+            </button>
+          </div>
+        </form>
+
+        <section class="prompt-card">
+          <div class="section-heading tight">
+            <p class="eyebrow">Prompt Engine</p>
+            <h2>Content System</h2>
+          </div>
+          <div class="prompt-lines" aria-label="Prompt engine signals">
+            <span>Intent match</span>
+            <span>Topical depth</span>
+            <span>SERP gap</span>
+            <span>CTA fit</span>
+          </div>
+        </section>
+      </aside>
+
+      <section class="workspace">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Feb 2026 - Apr 2026 Project</p>
+            <h2>Education Keyword Growth Cockpit</h2>
+          </div>
+          <nav class="tabs" aria-label="Workspace views">
+            <button class="tab active" type="button" data-view="research">
+              <svg><use href="#icon-search"></use></svg>
+              Research
+            </button>
+            <button class="tab" type="button" data-view="clusters">
+              <svg><use href="#icon-cluster"></use></svg>
+              Clusters
+            </button>
+            <button class="tab" type="button" data-view="brief">
+              <svg><use href="#icon-brief"></use></svg>
+              Brief
+            </button>
+            <button class="tab" type="button" data-view="planner">
+              <svg><use href="#icon-calendar"></use></svg>
+              Planner
+            </button>
+          </nav>
+        </header>
+
+        <section class="summary-grid" aria-label="Project metrics">
+          <article class="metric">
+            <span>Opportunity Score</span>
+            <strong id="scoreMetric">82</strong>
+            <small id="scoreHint">Strong education demand</small>
+          </article>
+          <article class="metric">
+            <span>Keyword Ideas</span>
+            <strong id="keywordMetric">28</strong>
+            <small id="keywordHint">Across 4 clusters</small>
+          </article>
+          <article class="metric">
+            <span>Intent Coverage</span>
+            <strong id="intentMetric">71%</strong>
+            <small>Commercial + transactional</small>
+          </article>
+          <article class="metric visual-metric">
+            <span>Search Intent Mix</span>
+            <div class="intent-bars" id="intentBars" aria-label="Intent mix chart"></div>
+          </article>
+        </section>
+
+        <section class="view active" id="researchView">
+          <div class="panel toolbar-panel">
+            <div class="section-heading">
+              <p class="eyebrow">Keyword Research</p>
+              <h2>High-Intent Opportunities</h2>
+            </div>
+            <div class="toolbar">
+              <label class="search-box">
+                <svg><use href="#icon-filter"></use></svg>
+                <input id="keywordSearch" type="search" placeholder="Filter keywords" />
+              </label>
+              <select id="intentFilter" aria-label="Filter by intent">
+                <option value="all">All intents</option>
+                <option value="informational">Informational</option>
+                <option value="commercial">Commercial</option>
+                <option value="transactional">Transactional</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="table-wrap panel">
+            <table>
+              <thead>
+                <tr>
+                  <th>Keyword</th>
+                  <th>Intent</th>
+                  <th>Cluster</th>
+                  <th>Volume</th>
+                  <th>Difficulty</th>
+                  <th>Priority</th>
+                </tr>
+              </thead>
+              <tbody id="keywordRows"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="view" id="clustersView">
+          <div class="section-heading">
+            <p class="eyebrow">Search Intent Analysis</p>
+            <h2>Keyword Clusters</h2>
+          </div>
+          <div class="cluster-grid" id="clusterGrid"></div>
+        </section>
+
+        <section class="view" id="briefView">
+          <div class="brief-layout">
+            <aside class="panel cluster-picker">
+              <div class="section-heading tight">
+                <p class="eyebrow">Brief Input</p>
+                <h2>Selected Cluster</h2>
+              </div>
+              <div id="clusterOptions" class="cluster-options"></div>
+            </aside>
+
+            <article class="panel brief-panel">
+              <div class="brief-header">
+                <div class="section-heading">
+                  <p class="eyebrow">Generative AI Draft</p>
+                  <h2 id="briefTitle">SEO Content Brief</h2>
+                </div>
+                <div class="button-row">
+                  <button class="button ghost" type="button" id="copyBriefBtn">
+                    <svg><use href="#icon-copy"></use></svg>
+                    Copy
+                  </button>
+                  <button class="button ghost" type="button" id="downloadBriefBtn">
+                    <svg><use href="#icon-download"></use></svg>
+                    Export
+                  </button>
+                </div>
+              </div>
+              <div id="briefOutput" class="brief-output"></div>
+            </article>
+          </div>
+        </section>
+
+        <section class="view" id="plannerView">
+          <div class="panel toolbar-panel">
+            <div class="section-heading">
+              <p class="eyebrow">Content Marketing</p>
+              <h2>Publishing Plan</h2>
+            </div>
+            <button class="button primary" type="button" id="addPlanBtn">
+              <svg><use href="#icon-plus"></use></svg>
+              Add Brief
+            </button>
+          </div>
+          <div class="planner-grid" id="plannerGrid"></div>
+        </section>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
